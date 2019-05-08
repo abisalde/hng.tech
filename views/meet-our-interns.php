@@ -202,6 +202,35 @@
                             </div>
                         </div>
                     </a>
+                    <a href="/views/interns/Lekia.php">
+                        <div style="cursor: pointer;" onclick="window.location='/views/interns/AgentPeter.php';" class="col-xs-12 col-sm-6 col-lg-3">
+                            <div class="intern-content">
+                                <img style="width: 151px; height: 151px;" class="rounded-corners" src="https://res.cloudinary.com/lekia/image/upload/v1554320457/Lekia.png" alt="Gospel Lekia">
+                                <h5>Gospel Lekia</h5>
+                                <p>Backend Engineer</p>
+                            </div>
+                        </div>
+                    </a>
+
+          <?php 
+
+          if($getInterns = opendir('interns/')){
+          while (false !== ($interns=readdir($getInterns)))
+           {
+
+                if ($interns != 'interns/' &&  strtolower(substr($interns, strrpos($interns, '.') + 1))=='php')
+                {
+echo file_get_contents('interns/'.$interns);
+
+  } 
+
+}
+  closedir($getInterns); 
+}
+                ?>
+
+
+
                 </div>
                 <div class="pagination-link">
                     <a class="intern-link" href="#">&larr;</a>
